@@ -29,7 +29,7 @@ export class TodoController {
 
   @Get()
   findAll(@Request() req) {
-    this.todoService.currentUserId = 1; //+req.user.userId;
+    this.todoService.currentUserId = +req.user.userId;
     return this.todoService.findAll();
   }
 
